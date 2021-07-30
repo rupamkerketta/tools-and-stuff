@@ -42,7 +42,7 @@ The signer should be the one and only in posession of the _private key_, this is
 trust comes from. Everyone else should have access to the signer's _public key_.
 
 Next, to verify a _digital signature_, the recipient:
-1. Calculates the _HASH_ of the same data (fiel, git-commit, message, etc.)
+1. Calculates the _HASH_ of the same data (file, git-commit, message, etc.)
 2. Decrypts the digital signature using the sender's _PUBLIC KEY_, then
 3. Compares the two hash values.
 
