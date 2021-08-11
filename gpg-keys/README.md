@@ -14,7 +14,7 @@ GPG relies on the idea of two encryption keys per person. Each person has a _pri
 key and a _public_ key. The _public_ key can decrypt something that was encrypted using the
 _private_ key.
 
-To send a file securely, you encrypt it with your _private_ key _and_ the recipient's _public_
+To send a file securely, you encrypt it with your _private_ key and the recipient's _public_
 key. To decrypt the file, they need their private key _and_ your public key.
 
 ---
@@ -48,7 +48,7 @@ Next, to verify a _digital signature_, the recipient:
 
 If the _HASH_ values match, the signature is considered to be valid :heavy_check_mark:.
 <br />
-Else, if they dont match :x:, the follwing can be the most probable reasons:
+Else, if they don't match :x:, the following can be the most probable reasons:
 <br />
 * A different key was used to sign it.
 * The data was altered (intentionally or untentionally).
@@ -58,7 +58,7 @@ Else, if they dont match :x:, the follwing can be the most probable reasons:
 #### Contents:
 
 1. [Generating GPG key pair](#1.-generating-gpg-key-pair)
-2. Editing the expiry date of the date of the key
+2. Editing the expiry date of the key
 3. What does revoking a GPG key mean ?
 4. Creating revoke certificates
 5. Backing-Up the keys
@@ -79,7 +79,7 @@ user@host:~ $ gpg --full-generate-key
 ```
 
 1. You'll be asked to pick an encryption type from a menu. Unless you have a good
-reason not to, type 1 and press `Enter`
+reason not to, type `1` and press `Enter`
 ```bash
 Please select what kind of key you want:
     (1) RSA and RSA (default)
@@ -97,7 +97,7 @@ What keysize do you want? (3072) 4096
 ```
 
 3. You can choose the expiry date for the public key. **_The private key is not affected by
-this configuration._** The user can still use the _private_ key for encryption, but of
+this configuration._** The user can still use the _private_ key for encryption, but
 the _public_ key is no longer valid, then the intended recipient won't be able to decrypt
 the data(file, git-commit, message, etc.) using the senders _public_ key.
 
@@ -117,6 +117,7 @@ Key does not expire at all
 Is this correct? (y/N) y
 ```
 
+4. Then you'll be asked for some details/credentials like full-name, email and comment.
 ```bash
 GnuPG needs to construct a user ID to identify your key.
 
@@ -132,6 +133,9 @@ You selected this USER-ID:
 Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
 ```
 
+5. They key-pair (_public_ and _private_ keys) will be generated with the configurations
+provided by the user. `An extremely large prime no. is generated which is then used to
+generate the keys.`
 ```bash
 We need to generate a lot of random bytes. It is a good idea to perform
 some other action (type on the keyboard, move the mouse, utilize the
@@ -146,3 +150,4 @@ pub   rsa4096 2021-07-31 [SC]
 uid                      John Doe <user@mail.com>
 sub   rsa4096 2021-07-31 [E]
 ```
+---
