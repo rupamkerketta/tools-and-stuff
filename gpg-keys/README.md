@@ -57,7 +57,7 @@ Else, if they don't match :x:, the following can be the most probable reasons:
 
 #### Contents:
 
-1. [Generating GPG key pair](#1.-generating-gpg-key-pair)
+1. [Generating GPG key pair](#section-1)
 2. Editing the expiry date of the key
 3. What does revoking a GPG key mean ?
 4. Creating revoke certificates
@@ -69,7 +69,7 @@ Else, if they don't match :x:, the following can be the most probable reasons:
 
 ---
 
-#### 1. Generating GPG key pair
+<h4 id="section-1">1. Generating GPG key pair</h4>
 
 The `--full-generate-key` option let's the use generate the _GPG key pair_ in an interactive
 session, within the terminal window.
