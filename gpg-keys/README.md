@@ -55,10 +55,19 @@ Else, if they don't match :x:, the following can be the most probable reasons:
 
 ---
 
+#### Resources and links
+
+* [Creating and Managing a GPG key pair](https://www.youtube.com/watch?v=1vVIpIvboSg&t=2s)
+* [Subkeys](https://wiki.debian.org/Subkeys)
+* [Why does gnupg create 4 separate keys and what does sub and ssb mean?](https://crypto.stackexchange.com/questions/63100/why-does-gnupg-create-4-separate-keys-and-what-does-sub-and-ssb-mean)
+* [How To Use GPG to Encrypt and Sign Messages](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages)
+
+---
+
 #### Contents:
 
 1. [Generating GPG key pair](#section-1)
-2. Editing the expiry date of the key
+2. [Editing the expiry date of the key](#section-2)
 3. What does revoking a GPG key mean ?
 4. Creating revoke certificates
 5. Backing-Up the keys
@@ -150,4 +159,9 @@ pub   rsa4096 2021-07-31 [SC]
 uid                      John Doe <user@mail.com>
 sub   rsa4096 2021-07-31 [E]
 ```
+
 ---
+
+<h4 id="section-2">2. Editing the expiry date of the key</h4>
+
+section-2
