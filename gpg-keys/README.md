@@ -57,7 +57,6 @@ Else, if they don't match :x:, the following can be the most probable reasons:
 
 #### Resources and links
 
-* [Creating and Managing a GPG key pair](https://www.youtube.com/watch?v=1vVIpIvboSg&t=2s)
 * [Subkeys](https://wiki.debian.org/Subkeys)
 * [Why does gnupg create 4 separate keys and what does sub and ssb mean?](https://crypto.stackexchange.com/questions/63100/why-does-gnupg-create-4-separate-keys-and-what-does-sub-and-ssb-mean)
 * [How To Use GPG to Encrypt and Sign Messages](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages)
@@ -66,102 +65,28 @@ Else, if they don't match :x:, the following can be the most probable reasons:
 
 #### Contents:
 
-1. [Generating GPG key pair](#section-1)
-2. [Editing the expiry date of the key](#section-2)
-3. What does revoking a GPG key mean ?
-4. Creating revoke certificates
-5. Backing-Up the keys
-6. Signed git-commits
+##### 1. Generating GPG key pair
+   * [Creating and Managing a GPG key pair (by Nick Janetakis)](https://www.youtube.com/watch?v=1vVIpIvboSg&t=2s)
 
-   * How to set the time duration for cached password ?
-   * How git-commit signatures work - using GPG keys ?
+       ```
+       Topics covered
 
----
+        - Generating a secure gpg key pair with an expiration date
+        - Updating the expiry date of the key
+        - Changing the gpg passphrase and keeping it safe
+        - Creating a revoke certificate to revoke the key pair on demand
+        - Backing up and restoring your key pair and associated files
+        - Exporting your gpg public key so you can share it with others
+        - Configuring your gpg agent to cache your passphrase for a week
+        ```
+##### 2. What does revoking a GPG key mean ?
+##### 3. Signed git-commits
 
-<h4 id="section-1">1. Generating GPG key pair</h4>
+ * Signing and Verifying Git Commits on the Command Line and Github
+ * How git-commit signatures work - using GPG keys ?
 
-The `--full-generate-key` option let's the use generate the _GPG key pair_ in an interactive
-session, within the terminal window.
-
-```bash
-user@host:~ $ gpg --full-generate-key
-```
-
-1. You'll be asked to pick an encryption type from a menu. Unless you have a good
-reason not to, type `1` and press `Enter`
-```bash
-Please select what kind of key you want:
-    (1) RSA and RSA (default)
-    (2) DSA and Elgamal
-    (3) DSA (sign only)
-    (4) RSA (sign only)
-   (14) Existing key from card
-Your selection? 1
-```
-
-2. Generally, I use `4096` as the bit size. :point_down:
-```bash
-RSA keys may be between 1024 and 4096 bits long.
-What keysize do you want? (3072) 4096
-```
-
-3. You can choose the expiry date for the public key. **_The private key is not affected by
-this configuration._** The user can still use the _private_ key for encryption, but
-the _public_ key is no longer valid, then the intended recipient won't be able to decrypt
-the data(file, git-commit, message, etc.) using the senders _public_ key.
-
-```bash
-Requested keysize is 4096 bits
-Please Specify how long the key should be valid.
-         0 = key does not expire
-      <n>  = key expires in n days
-      <n>w = key expires in n weeks
-      <n>m = key expires in n months
-      <n>y = key expires in n years
-Key is valid for> (0) 0
-```
-
-```bash
-Key does not expire at all
-Is this correct? (y/N) y
-```
-
-4. Then you'll be asked for some details/credentials like full-name, email and comment.
-```bash
-GnuPG needs to construct a user ID to identify your key.
-
-Real name: <FirstName><Space><LastName>
-Email address: user@mail.com
-Comment:
-```
-
-```bash
-You selected this USER-ID:
-    "Username <username@mail.com>"
-
-Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
-```
-
-5. They key-pair (_public_ and _private_ keys) will be generated with the configurations
-provided by the user. `An extremely large prime no. is generated which is then used to
-generate the keys.`
-```bash
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-gpg: key <KEY_ID> marked as ultimately trusted
-gpg: revocation certificate stored as '/home/user/.gnupg/openpgp-revocs.d/<ID>.rev'
-public and secret key created and signed.
-
-pub   rsa4096 2021-07-31 [SC]
-      <SOME_ID>
-uid                      John Doe <user@mail.com>
-sub   rsa4096 2021-07-31 [E]
-```
+##### 4. Using gpg to encrypt files
+##### 5. Primary keys and Sub keys
+##### 6. Public key servers
 
 ---
-
-<h4 id="section-2">2. Editing the expiry date of the key</h4>
-
-section-2
